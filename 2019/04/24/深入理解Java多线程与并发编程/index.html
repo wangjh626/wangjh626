@@ -8,6 +8,7 @@
 
 
     <meta name="description" content="一、线程三大特性​    多线程有三大特性：原子性、可见性、有序性 1.1、什么是原子性​    即一个操作或者多个操作，要么全部执行并且执行的过程不会被任何因素打断，要么就都不执行。原子性其实就是保证数据一致，线程安全的一部分。 1.2、什么是可见性​    当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。 1.3、什么是有序性​    程序执行的顺序按照">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解Java多线程与并发编程">
 <meta property="og:url" content="https://wangjh626.github.io/2019/04/24/深入理解Java多线程与并发编程/index.html">
@@ -15,7 +16,7 @@
 <meta property="og:description" content="一、线程三大特性​    多线程有三大特性：原子性、可见性、有序性 1.1、什么是原子性​    即一个操作或者多个操作，要么全部执行并且执行的过程不会被任何因素打断，要么就都不执行。原子性其实就是保证数据一致，线程安全的一部分。 1.2、什么是可见性​    当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。 1.3、什么是有序性​    程序执行的顺序按照">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://wangjh626.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-24T07:42:14.413Z">
+<meta property="og:updated_time" content="2019-04-24T08:50:08.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解Java多线程与并发编程">
 <meta name="twitter:description" content="一、线程三大特性​    多线程有三大特性：原子性、可见性、有序性 1.1、什么是原子性​    即一个操作或者多个操作，要么全部执行并且执行的过程不会被任何因素打断，要么就都不执行。原子性其实就是保证数据一致，线程安全的一部分。 1.2、什么是可见性​    当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。 1.3、什么是有序性​    程序执行的顺序按照">
@@ -200,6 +201,15 @@
 
         </div>
         
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/">Java</a>
+                </div>
+            </div>
+        </div>
+        
         
         
     </div>
@@ -212,13 +222,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/24/hello-world/">
-                <span class="level-item">Hello World</span>
-                <i class="level-item fas fa-chevron-right"></i>
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/24/Http协议-Servlet/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Http协议 &amp; Servlet</span>
             </a>
         </div>
+        
         
     </div>
 </div>
@@ -227,7 +237,7 @@
 
 <div class="card">
     <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comentarios</h3>
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
         
 <div id="lv-container" data-id="city" data-uid="MTAyMC80Mzg5Ny8yMDQzMg">
     <script type="text/javascript">
@@ -272,7 +282,7 @@
                     
                     
                     <p class="is-size-6 is-block">
-                        Your title
+                        Java小白
                     </p>
                     
                     
@@ -288,7 +298,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        Posts
                     </p>
                     <p class="title has-text-weight-normal">
                         2
@@ -298,7 +308,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categorias
+                        Categories
                     </p>
                     <p class="title has-text-weight-normal">
                         0
@@ -308,17 +318,17 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Etiquetas
+                        Tag
                     </p>
                     <p class="title has-text-weight-normal">
-                        0
+                        1
                     </p>
                 </div>
             </div>
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/wangjh626" target="_blank">
-                SEGUIR</a>
+                Follow</a>
         </div>
         
         
@@ -370,7 +380,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                Categories
             </h3>
             <ul class="menu-list">
             
@@ -380,6 +390,15 @@
 </div>
     
         
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/Java/" style="font-size: 10px;">Java</a>
+    </div>
+</div>
+
     
     
         <div class="column-right-shadow is-hidden-widescreen ">
@@ -388,8 +407,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/24/Http协议-Servlet/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Http协议 &amp; Servlet">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-24T08:49:08.000Z">2019-04-24</time></div>
+                    <a href="/2019/04/24/Http协议-Servlet/" class="has-link-black-ter is-size-6">Http协议 &amp; Servlet</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -410,25 +448,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/24/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-24T02:45:35.876Z">2019-04-24</time></div>
-                    <a href="/2019/04/24/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -437,7 +456,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -461,9 +480,16 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
                 
             </div>
         </div>
@@ -485,8 +511,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/24/Http协议-Servlet/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Http协议 &amp; Servlet">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-24T08:49:08.000Z">2019-04-24</time></div>
+                    <a href="/2019/04/24/Http协议-Servlet/" class="has-link-black-ter is-size-6">Http协议 &amp; Servlet</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -507,25 +552,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/24/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-24T02:45:35.876Z">2019-04-24</time></div>
-                    <a href="/2019/04/24/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -534,7 +560,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -558,9 +584,16 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
                 
             </div>
         </div>
@@ -737,10 +770,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
+                POSTS: 'Posts',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categorias',
-                TAGS: 'Etiquetas',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
