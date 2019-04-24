@@ -2,7 +2,7 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Tag: Java - wangjh626’s Blog</title>
+<title>Etiqueta: Java - wangjh626’s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -138,7 +138,7 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">Tags</a></li>
+            <li><a href="/tags">Etiquetas</a></li>
             <li class="is-active"><a href="#" aria-current="page">Java</a></li>
         </ul>
         </nav>
@@ -157,7 +157,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    13 minutes read (About 1929 words)
+                    13 minutes read (About 1930 words)
                 </span>
                 
                 
@@ -182,176 +182,17 @@
 </blockquote>
 </li>
 <li><p>版本</p>
-<p>1.0</p>
-<p>​    请求数据，服务器返回后，将会断开连接</p>
-<p>1.1</p>
-<p>​    请求数据，服务器返回后，连接还会保持着。除非服务器或者客户端关掉。有一定的时间限制，如果都空着这个连接，那么后面会自己断掉。</p>
-</li>
-</ul>
-<h3 id="演示客户端如何与服务器端通讯"><a href="#演示客户端如何与服务器端通讯" class="headerlink" title="演示客户端如何与服务器端通讯"></a>演示客户端如何与服务器端通讯</h3><blockquote>
-<p>在地址栏中键入网络地址或者是平常注册的时候，点击了注册按钮，浏览器都能显示出来一些东西。那么背地里到底浏览器和服务器是怎么通讯，它们都传输了哪些数据呢？</p>
-</blockquote>
-<h3 id="Http请求数据解释"><a href="#Http请求数据解释" class="headerlink" title="Http请求数据解释"></a>Http请求数据解释</h3><blockquote>
-<p>请求的数据里面包含三个部分内容：请求行、请求头、请求体</p>
-</blockquote>
-<ul>
-<li><p>请求行</p>
-<figure class="highlight stata hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">POST</span>：请求方式，以<span class="hljs-keyword">post</span>去提交数据</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>请求头</p>
-</li>
-<li><p>请求体</p>
-</li>
-</ul>
-<blockquote>
-<p>浏览器真正发送给服务器的数据</p>
-</blockquote>
-<figure class="highlight routeros hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">发送的数据呈现的是<span class="hljs-attribute">key</span>=value，如果存在多个数据，那么使用&amp;</span><br><span class="line"><span class="hljs-attribute">firstname</span>=zhang&amp;lastname=san</span><br></pre></td></tr></table></figure>
-<h3 id="Http响应数据解析"><a href="#Http响应数据解析" class="headerlink" title="Http响应数据解析"></a>Http响应数据解析</h3><blockquote>
-<p>响应的数据里面包含三个部分的内容：响应行、响应头、响应体</p>
-</blockquote>
-<h3 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h3><ol>
-<li>请求路径不同。POST请求，在URL后面不跟上任何的数据，GET请求在地址后面跟上数据</li>
-<li>带上的数据不同。POST请求会使用流的方式写数据，GET请求是在地址栏上跟数据</li>
-<li>由于POST请求使用流的方式写数据，所以一定要一个Content-Length的头来说明数据的长度有多少。</li>
-</ol>
-<ul>
-<li>POST<ol>
-<li>数据是以流的方式写过去，不会在地址栏上面显示。现在一般提交数据到服务器使用的都是POST。</li>
-<li>以流的方式写数据，所有数据没有大小限制。</li>
-</ol>
-</li>
-<li>GET<ol>
-<li>会在地址栏后面拼接数据，所以有安全隐患。一般从服务器获取数据，并且客户端也不用提交上面的数据的时候，可以使用GET。</li>
-<li>能够带的数据有限，1kb大小</li>
-</ol>
-</li>
-</ul>
-<h3 id="Web资源"><a href="#Web资源" class="headerlink" title="Web资源"></a>Web资源</h3><p>在http协议当中，规定了请求和响应双方，客户端和服务器端。与Web相关的资源叫Web资源。</p>
-<p>有两种分类：</p>
-<ol>
-<li><p>静态资源</p>
-<p>html、js、css</p>
-</li>
-<li><p>动态资源</p>
-<p>servlet、jsp</p>
-</li>
-</ol>
-<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><ul>
-<li><p>Servlet是什么？</p>
-<blockquote>
-<p>其实就是一个java程序，运行在我们的Web服务器上，用于接收和响应客户端的http请求。</p>
-<p>更多的是配合动态资源来做，当然静态资源也需要使用到Servlet，只不过是Tomcat里面已经定义好了一个DefaultServlet。</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="Hello-Servlet"><a href="#Hello-Servlet" class="headerlink" title="Hello    Servlet"></a>Hello    Servlet</h3><ol>
-<li><p>得写一个Web工程，要有一个服务器。</p>
-</li>
-<li><p>测试运行Web工程</p>
-<ol>
-<li><p>新建一个类，实现Servlet接口</p>
-</li>
-<li><p>配置Servlet，用意：告诉服务器，我们的应用有这么写个Servlet。</p>
-<p>在web\WEB-INF\web.xml里面写上以下内容</p>
-<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!-- 向Tomcat报告，这个应用里面有个Servlet，名字叫做HelloServlet，具体的路径是com.wjh.servlet.HelloServlet --&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">servlet</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>HelloServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">servlet-class</span>&gt;</span>com.wjh.servlet.HelloServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">servlet</span>&gt;</span></span><br><span class="line">    <span class="hljs-comment">&lt;!-- 注册Servlet的映射。Servlet-name：找到上面注册的具体Servlet，url-pattern：在地址栏上的path --&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>HelloServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/helloServlet<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="Servlet执行过程"><a href="#Servlet执行过程" class="headerlink" title="Servlet执行过程"></a>Servlet执行过程</h3><ol>
-<li>找到Tomcat应用</li>
-<li>找到项目</li>
-<li>找web.xml，然后在里面找到url-pattern，看有没有哪一个pattern的内容是/helloServlet</li>
-<li>找到servlet-mapping中的哪个servlet-name 【HelloServlet】</li>
-<li>找到上面定义的servlet元素中的servlet-name中的【HelloServlet】</li>
-<li>找到下面定义的servlet-class，然后开始创建该类的实例</li>
-<li>继而执行该Servlet中的service方法</li>
-</ol>
-<h3 id="Servlet的通用写法"><a href="#Servlet的通用写法" class="headerlink" title="Servlet的通用写法"></a>Servlet的通用写法</h3><figure class="highlight 1c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Servlet（接口）</span><br><span class="line">   <span class="hljs-string">|</span></span><br><span class="line">GenericServlet</span><br><span class="line">   <span class="hljs-string">|</span></span><br><span class="line">HttpServlet（用于处理http的请求）</span><br></pre></td></tr></table></figure>
-<ol>
-<li>定义一个类，继承HttpServlet，复写doGet和doPost</li>
-</ol>
-<h3 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h3><ul>
-<li><p>生命周期</p>
-<blockquote>
-<p>从创建到销毁的一段时间</p>
-</blockquote>
-</li>
-<li><p>生命周期方法</p>
-<blockquote>
-<p>从创建到销毁，所调用的那些方法。</p>
-</blockquote>
-<ul>
-<li><p>init方法</p>
-<figure class="highlight 1c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//在创建该Servlet的实例时，就执行该方法。</span></span><br><span class="line">   <span class="hljs-comment">//一个Servlet只会初始化一次，即init方法只会执行一次</span></span><br><span class="line">   <span class="hljs-comment">//默认情况下是：初次访问该Servlet时，才会创建实例</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>service方法</p>
-<figure class="highlight 1c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//只要客户端来了一个请求，那么就执行这个方法</span></span><br><span class="line">   <span class="hljs-comment">//该方法可以被执行很多次。一次请求对应一次service方法的调用。</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>destroy方法</p>
-<figure class="highlight 1c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//Servlet销毁的时候，就会执行该方法</span></span><br><span class="line">   <span class="hljs-comment">//1.该项目从Tomcat里面移除</span></span><br><span class="line">   <span class="hljs-comment">//2.正常关闭Tomcat就会执行</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>doGet和doPost不算生命周期方法，所谓的生命周期方法是指，从对象的创建到销毁一定会执行的方法，但是这两个方法，不一定会执行。</p>
-</blockquote>
-<h3 id="让Servlet创建实例的时机提前"><a href="#让Servlet创建实例的时机提前" class="headerlink" title="让Servlet创建实例的时机提前"></a>让Servlet创建实例的时机提前</h3><ol>
-<li><p>默认情况下，只有在初次访问Servlet的时候，才会执行init方法。有的时候，我们可能需要在这个方法里面执行一些初始化工作，甚至是做一些比较耗时的逻辑。</p>
-</li>
-<li><p>那么这个时候，初次方法可能会在init方法中逗留太久的时间。那么有没有方法可以让这个初始化的时机提前一点呢？</p>
-</li>
-<li><p>在配置的时候，使用load-on-startup元素来指定，给定的数据越小，启动的时机就越早，一般不写负数，从2开始即可。</p>
-<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">servlet</span>&gt;</span></span><br><span class="line">       <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>HelloServlet04<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span></span><br><span class="line">       <span class="hljs-tag">&lt;<span class="hljs-name">servlet-class</span>&gt;</span>com.wjh.servlet.HelloServlet04<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-class</span>&gt;</span></span><br><span class="line">       <span class="hljs-tag">&lt;<span class="hljs-name">load-on-startup</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">load-on-startup</span>&gt;</span></span><br><span class="line">   <span class="hljs-tag">&lt;/<span class="hljs-name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="ServletConfig"><a href="#ServletConfig" class="headerlink" title="ServletConfig"></a>ServletConfig</h3><blockquote>
-<p>Servlet的配置，通过这个对象，可以获取Servlet在配置的时候的一些信息</p>
-</blockquote>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//ServletConfig 专门用于在配置Servlet的信息</span></span><br><span class="line"><span class="hljs-comment">//1.得到Servlet配置对象</span></span><br><span class="line">ServletConfig config = getServletConfig();</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//获取到的是配置Servlet里面servlet-name的文本内容</span></span><br><span class="line">String servletName = config.getServletName();</span><br><span class="line">System.out.println(<span class="hljs-string">"servletName = "</span> + servletName);</span><br><span class="line"></span><br><span class="line">   <span class="hljs-comment">//2.可以获取具体的某一个参数</span></span><br><span class="line">   String address = config.getInitParameter(<span class="hljs-string">"address"</span>);</span><br><span class="line">   System.out.println(<span class="hljs-string">"address = "</span> + address);</span><br><span class="line"></span><br><span class="line">   <span class="hljs-comment">//3.获取所有的参数名称</span></span><br><span class="line">   Enumeration&lt;String&gt; names = config.getInitParameterNames();</span><br><span class="line">   <span class="hljs-comment">//遍历取出所有的参数名称</span></span><br><span class="line">   <span class="hljs-keyword">while</span> (names.hasMoreElements()) &#123;</span><br><span class="line">   	String key = names.nextElement();</span><br><span class="line">   	String parameter = config.getInitParameter(key);</span><br><span class="line">   	System.out.println(<span class="hljs-string">"name = "</span> + key + <span class="hljs-string">", value = "</span> + parameter);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="为什么需要有这个ServletConfig"><a href="#为什么需要有这个ServletConfig" class="headerlink" title="为什么需要有这个ServletConfig"></a>为什么需要有这个ServletConfig</h4><ol>
-<li>未来我们自己开发的一些应用，使用到了一些技术，或者一些代码我们不会，但是有人写出来了。它的代码放置在了自己的Servlet类里面。</li>
-<li>刚好这个Servlet里面需要一个数字或者叫做变量值，但是这个值不能是固定的，所以要求使用到这个Servlet的公司，在注册Servlet的时候，必须要在web.xml里面声明init-params。</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li><p>Http协议</p>
-<ol>
-<li><p>使用Http抓包看一看http请求背后的细节。</p>
-</li>
-<li><p>基本了解请求和响应的数据内容</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">请求行、请求头、请求体</span><br><span class="line">响应行、响应头、响应体</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>GET和POST的区别</p>
-</li>
-</ol>
-</li>
-<li><p>Servlet</p>
-<ol>
-<li><p>会使用简单的Servlet</p>
-<ol>
-<li>写一个类，实现接口Servlet</li>
-<li>配置Servlet</li>
-<li>会访问Servlet</li>
-</ol>
-</li>
-<li><p>Servlet的生命周期</p>
-<ol>
-<li>init</li>
-<li>service</li>
-<li>destroy</li>
-</ol>
-</li>
-<li><p>ServletConfig</p>
-<p>获取配置的信息，params</p>
-</li>
-</ol>
-</li>
-</ul>
-
+<p>1.0</p></li></ul>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/24/Http协议-Servlet/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -389,44 +230,20 @@
             
         </h1>
         <div class="content">
-            <a id="more"></a>
-<h2 id="一、线程三大特性"><a href="#一、线程三大特性" class="headerlink" title="一、线程三大特性"></a>一、线程三大特性</h2><p>​    多线程有三大特性：原子性、可见性、有序性</p>
+            <h2 id="一、线程三大特性"><a href="#一、线程三大特性" class="headerlink" title="一、线程三大特性"></a>一、线程三大特性</h2><p>​    多线程有三大特性：原子性、可见性、有序性</p>
 <h3 id="1-1、什么是原子性"><a href="#1-1、什么是原子性" class="headerlink" title="1.1、什么是原子性"></a>1.1、什么是原子性</h3><p>​    即一个操作或者多个操作，要么全部执行并且执行的过程不会被任何因素打断，要么就都不执行。原子性其实就是保证数据一致，线程安全的一部分。</p>
 <h3 id="1-2、什么是可见性"><a href="#1-2、什么是可见性" class="headerlink" title="1.2、什么是可见性"></a>1.2、什么是可见性</h3><p>​    当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。</p>
 <h3 id="1-3、什么是有序性"><a href="#1-3、什么是有序性" class="headerlink" title="1.3、什么是有序性"></a>1.3、什么是有序性</h3><p>​    程序执行的顺序按照代码的先后顺序执行。</p>
-<h2 id="二、Java内存模型"><a href="#二、Java内存模型" class="headerlink" title="二、Java内存模型"></a>二、Java内存模型</h2><p>​    共享内存模型指的就是Java内存模型（简称JMM），JMM决定一个线程对共享变量的写入时，能对另一个线程可见。从抽象的角度来看，JMM定义了线程和主内存之间的抽象关系：线程之间的共享变量存储在主内存（main memory）中，每个线程都有一个私有的本地内存（local memory），本地内存中存储了该线程以读/写共享变量的副本。本地内存是JMM的一个抽象概念，并且真实存在。它涵盖了缓存，写缓冲区，寄存器以及其他的硬件和编译器优化。</p>
-<p>​    <strong>总结：什么是Java内存模型：Java内存模型简称JMM，定义了一个线程对另一个线程可见。共享变量存放在主内存中，每个线程都有自己的本地内存，当多个线程同时访问一个数据的时候，可能本地内存没有及时刷新到主内存，所以就会发生线程安全问题。</strong></p>
-<h2 id="三、Volatile"><a href="#三、Volatile" class="headerlink" title="三、Volatile"></a>三、Volatile</h2><h3 id="4-1、什么是Volatile"><a href="#4-1、什么是Volatile" class="headerlink" title="4.1、什么是Volatile"></a>4.1、什么是Volatile</h3><p>​    Volatile关键字的作用是变量在多个线程之间可见。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">volatile</span> <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">true</span>;</span><br></pre></td></tr></table></figure>
-<p>​    使用Volatile关键字可以解决线程之间的可见性，强制线程每次读取该值的时候都去“主内存”中取值。</p>
-<h3 id="4-2、Volatile非原子性"><a href="#4-2、Volatile非原子性" class="headerlink" title="4.2、Volatile非原子性"></a>4.2、Volatile非原子性</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VolatileNoAtomicDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) &#123;</span><br><span class="line">            VolatileNoAtomoic[] volatileNoAtomoics = <span class="hljs-keyword">new</span> VolatileNoAtomoic[<span class="hljs-number">10</span>];</span><br><span class="line">            volatileNoAtomoics[i] = <span class="hljs-keyword">new</span> VolatileNoAtomoic();</span><br><span class="line">            volatileNoAtomoics[i].start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VolatileNoAtomoic</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) &#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(getName() + <span class="hljs-string">"---&gt;"</span> + count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="C:\Users\。。。\AppData\Roaming\Typora\typora-user-images\1554785140472.png" alt></p>
-<h3 id="4-3、使用AtomicInterger原子类"><a href="#4-3、使用AtomicInterger原子类" class="headerlink" title="4.3、使用AtomicInterger原子类"></a>4.3、使用AtomicInterger原子类</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VolatileNoAtomoic</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> AtomicInteger atomicInteger = <span class="hljs-keyword">new</span> AtomicInteger(<span class="hljs-number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) &#123;</span><br><span class="line">            atomicInteger.incrementAndGet();	<span class="hljs-comment">//相当于count++</span></span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(getName() + <span class="hljs-string">"---&gt;"</span> + atomicInteger);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-4、volatile与synchronized区别"><a href="#4-4、volatile与synchronized区别" class="headerlink" title="4.4、volatile与synchronized区别"></a>4.4、volatile与synchronized区别</h3><p>​    <strong>紧靠volatile不能保证线程的安全性。（原子性）</strong></p>
-<p>​    ①volatile轻量级，只能修饰变量。synchronized重量级，还可以修饰方法。</p>
-<p>​    ②volatile只能保证数据的可见性，不能用来同步，因为多个线程并发访问volatile修饰的变量时不会阻塞。synchronized不仅可以保证可见性，而且还保证原子性，因为，只有获得了锁的线程才能进入临界区，从而保证临界区中的所有语句都全部执行。多个线程争抢synchronized锁对象时，会出现阻塞。</p>
-<p>​    线程安全性：线程安全性包括两个方面：①可见性，②原子性。</p>
-<h2 id="五、ThreadLocal"><a href="#五、ThreadLocal" class="headerlink" title="五、ThreadLocal"></a>五、ThreadLocal</h2><h3 id="5-1、什么是ThreadLocal"><a href="#5-1、什么是ThreadLocal" class="headerlink" title="5.1、什么是ThreadLocal"></a>5.1、什么是ThreadLocal</h3><p>​    ThreadLocal提高一个线程的局部变量，访问某个线程拥有自己的局部变量。</p>
-<p>​    当使用ThreadLocal维护变量时，ThreadLocal为每个使用该变量的线程提供独立的变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响其他线程所对应的副本变量。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">private</span> ThreadLocal&lt;Integer&gt; count = <span class="hljs-keyword">new</span> ThreadLocal&lt;Integer&gt;() &#123;</span><br><span class="line">        <span class="hljs-comment">//设置当前线程局部变量初始化值</span></span><br><span class="line">        <span class="hljs-meta">@Override</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">protected</span> Integer <span class="hljs-title">initialValue</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="5-2、ThreadLocal实现原理"><a href="#5-2、ThreadLocal实现原理" class="headerlink" title="5.2、ThreadLocal实现原理"></a>5.2、ThreadLocal实现原理</h3><p>​    ThreadLocal通过map集合    Map.put(“当前线程”, 值)</p>
-<h2 id="六、线程池"><a href="#六、线程池" class="headerlink" title="六、线程池"></a>六、线程池</h2><h3 id="6-1、什么是线程池？"><a href="#6-1、什么是线程池？" class="headerlink" title="6.1、什么是线程池？"></a>6.1、什么是线程池？</h3><h3 id="6-2、线程池的作用"><a href="#6-2、线程池的作用" class="headerlink" title="6.2、线程池的作用"></a>6.2、线程池的作用</h3><h3 id="6-3、线程池四种创建方式"><a href="#6-3、线程池四种创建方式" class="headerlink" title="6.3、线程池四种创建方式"></a>6.3、线程池四种创建方式</h3><p>​    Java通过Executors（jdk1.5并发包）提供四种线程池，分别为：</p>
-<ol>
-<li><p>newCachedThreadPool：创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExecutorService newCacheThreadPool = Executors.newCachedThreadPool();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>newFixedThreadPool：创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//每次最多执行3个线程</span></span><br><span class="line">ExecutorService newFixedThreadPool = Executors.newFixedThreadPool(<span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>newScheduledThreadPool：创建一个定长线程池，支持定时及周期性任务执行。</p>
-</li>
-<li><p>newSingleThreadExecutor（一般不使用）：创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序运行。</p>
-</li>
-</ol>
-<p>​    <strong>总结：线程池为无限大，当执行第二个任务时第一个任务已经完成，会重复用执行第一个任务的线程，而不用每次新建线程。</strong></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/24/深入理解Java多线程与并发编程/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -479,7 +296,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
                         2
@@ -489,7 +306,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
                         0
@@ -499,7 +316,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tag
+                        Etiqueta
                     </p>
                     <p class="title has-text-weight-normal">
                         1
@@ -509,7 +326,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/wangjh626" target="_blank">
-                Follow</a>
+                SEGUIR</a>
         </div>
         
         
@@ -561,7 +378,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             
@@ -574,7 +391,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
         <a href="/tags/Java/" style="font-size: 10px;">Java</a>
     </div>
@@ -588,7 +405,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -637,7 +454,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -661,7 +478,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -692,7 +509,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -741,7 +558,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -765,7 +582,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -951,10 +768,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
