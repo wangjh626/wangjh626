@@ -191,7 +191,7 @@
 </blockquote>
 <ul>
 <li><p>请求行</p>
-<figure class="highlight stata hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">POST</span>：请求方式，以<span class="hljs-keyword">post</span>去提交数据</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST：请求方式，以post去提交数据</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>请求头</p>
 </li>
@@ -201,7 +201,7 @@
 <blockquote>
 <p>浏览器真正发送给服务器的数据</p>
 </blockquote>
-<figure class="highlight routeros hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">发送的数据呈现的是<span class="hljs-attribute">key</span>=value，如果存在多个数据，那么使用&amp;</span><br><span class="line"><span class="hljs-attribute">firstname</span>=zhang&amp;lastname=san</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">发送的数据呈现的是key=value，如果存在多个数据，那么使用&amp;</span><br><span class="line">firstname=zhang&amp;lastname=san</span><br></pre></td></tr></table></figure>
 <h3 id="Http响应数据解析"><a href="#Http响应数据解析" class="headerlink" title="Http响应数据解析"></a>Http响应数据解析</h3><blockquote>
 <p>响应的数据里面包含三个部分的内容：响应行、响应头、响应体</p>
 </blockquote>
@@ -263,7 +263,7 @@
 <li>找到下面定义的servlet-class，然后开始创建该类的实例</li>
 <li>继而执行该Servlet中的service方法</li>
 </ol>
-<h3 id="Servlet的通用写法"><a href="#Servlet的通用写法" class="headerlink" title="Servlet的通用写法"></a>Servlet的通用写法</h3><figure class="highlight 1c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Servlet（接口）</span><br><span class="line">   <span class="hljs-string">|</span></span><br><span class="line">GenericServlet</span><br><span class="line">   <span class="hljs-string">|</span></span><br><span class="line">HttpServlet（用于处理http的请求）</span><br></pre></td></tr></table></figure>
+<h3 id="Servlet的通用写法"><a href="#Servlet的通用写法" class="headerlink" title="Servlet的通用写法"></a>Servlet的通用写法</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Servlet（接口）</span><br><span class="line">   |</span><br><span class="line">GenericServlet</span><br><span class="line">   |</span><br><span class="line">HttpServlet（用于处理http的请求）</span><br></pre></td></tr></table></figure>
 <ol>
 <li>定义一个类，继承HttpServlet，复写doGet和doPost</li>
 </ol>
@@ -279,13 +279,13 @@
 </blockquote>
 <ul>
 <li><p>init方法</p>
-<figure class="highlight 1c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//在创建该Servlet的实例时，就执行该方法。</span></span><br><span class="line">   <span class="hljs-comment">//一个Servlet只会初始化一次，即init方法只会执行一次</span></span><br><span class="line">   <span class="hljs-comment">//默认情况下是：初次访问该Servlet时，才会创建实例</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//在创建该Servlet的实例时，就执行该方法。</span><br><span class="line">   //一个Servlet只会初始化一次，即init方法只会执行一次</span><br><span class="line">   //默认情况下是：初次访问该Servlet时，才会创建实例</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>service方法</p>
-<figure class="highlight 1c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//只要客户端来了一个请求，那么就执行这个方法</span></span><br><span class="line">   <span class="hljs-comment">//该方法可以被执行很多次。一次请求对应一次service方法的调用。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//只要客户端来了一个请求，那么就执行这个方法</span><br><span class="line">   //该方法可以被执行很多次。一次请求对应一次service方法的调用。</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>destroy方法</p>
-<figure class="highlight 1c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//Servlet销毁的时候，就会执行该方法</span></span><br><span class="line">   <span class="hljs-comment">//1.该项目从Tomcat里面移除</span></span><br><span class="line">   <span class="hljs-comment">//2.正常关闭Tomcat就会执行</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//Servlet销毁的时候，就会执行该方法</span><br><span class="line">   //1.该项目从Tomcat里面移除</span><br><span class="line">   //2.正常关闭Tomcat就会执行</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -368,6 +368,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/25/JDBC/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">JDBC</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/24/深入理解Java多线程与并发编程/">
@@ -447,7 +454,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        3
                     </p>
                 </div>
             </div>
@@ -558,6 +565,25 @@
         
         <article class="media">
             
+            <a href="/2019/04/25/JDBC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDBC">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T03:42:31.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/JDBC/" class="has-link-black-ter is-size-6">JDBC</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/24/Http协议-Servlet/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Http协议 &amp; Servlet">
@@ -612,7 +638,7 @@
                     <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -633,7 +659,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -662,6 +688,25 @@
         
         <article class="media">
             
+            <a href="/2019/04/25/JDBC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDBC">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T03:42:31.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/JDBC/" class="has-link-black-ter is-size-6">JDBC</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/24/Http协议-Servlet/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Http协议 &amp; Servlet">
@@ -716,7 +761,7 @@
                     <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -737,7 +782,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
