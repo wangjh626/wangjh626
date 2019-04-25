@@ -143,6 +143,10 @@
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-04-25T03:42:31.000Z">2019-04-25</time>
                 
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
+                </div>
+                
                 
                 <span class="level-item has-text-grey">
                     
@@ -160,7 +164,7 @@
             
         </h1>
         <div class="content">
-            <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><blockquote>
+            <blockquote>
 <p>Java Database Connectivity：Java 数据库连接</p>
 </blockquote>
 <ul>
@@ -171,121 +175,17 @@
 </blockquote>
 <h2 id="使用JDBC的基本步骤"><a href="#使用JDBC的基本步骤" class="headerlink" title="使用JDBC的基本步骤"></a>使用JDBC的基本步骤</h2><ol>
 <li><p>注册驱动</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//1.注册驱动</span></span><br><span class="line">            DriverManager.registerDriver(<span class="hljs-keyword">new</span> Driver());</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>建立连接</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//2.建立连接</span></span><br><span class="line">            conn = DriverManager.getConnection(<span class="hljs-string">"jdbc:mysql://localhost/student?serverTimezone=GMT"</span>, <span class="hljs-string">"root"</span>, <span class="hljs-string">"root"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建statement</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//3.创建statement，跟数据库打交道，一定需要这个对象</span></span><br><span class="line">            st = conn.createStatement();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>执行sql，得到ResultSet</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//4.执行查询，得到结果集</span></span><br><span class="line">            String sql = <span class="hljs-string">"select * from student"</span>;</span><br><span class="line">            rs = st.executeQuery(sql);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>遍历查询结果</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//5.遍历查询每一条记录</span></span><br><span class="line">            <span class="hljs-keyword">while</span> (rs.next()) &#123;</span><br><span class="line">                <span class="hljs-keyword">int</span> id = rs.getInt(<span class="hljs-string">"id"</span>);</span><br><span class="line">                String name = rs.getString(<span class="hljs-string">"name"</span>);</span><br><span class="line">                <span class="hljs-keyword">int</span> age = rs.getInt(<span class="hljs-string">"age"</span>);</span><br><span class="line"></span><br><span class="line">                System.out.println(<span class="hljs-string">"id="</span> + id + <span class="hljs-string">", name="</span> + name + <span class="hljs-string">", age="</span> + age);</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>释放资源</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (rs != <span class="hljs-keyword">null</span>) &#123;</span><br><span class="line">                rs.close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li>入门代码</li>
-</ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> com.mysql.cj.jdbc.Driver;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> java.sql.*;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainTest</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            <span class="hljs-comment">//1.注册驱动</span></span><br><span class="line">            DriverManager.registerDriver(<span class="hljs-keyword">new</span> Driver());</span><br><span class="line"></span><br><span class="line">            <span class="hljs-comment">//2.建立连接</span></span><br><span class="line">            Connection conn = DriverManager.getConnection(<span class="hljs-string">"jdbc:mysql://localhost/student?serverTimezone=GMT"</span>, <span class="hljs-string">"root"</span>, <span class="hljs-string">"root"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="hljs-comment">//3.创建statement，跟数据库打交道，一定需要这个对象</span></span><br><span class="line">            Statement st = conn.createStatement();</span><br><span class="line"></span><br><span class="line">            <span class="hljs-comment">//4.执行查询，得到结果集</span></span><br><span class="line">            String sql = <span class="hljs-string">"select * from student"</span>;</span><br><span class="line">            ResultSet rs = st.executeQuery(sql);</span><br><span class="line"></span><br><span class="line">            <span class="hljs-comment">//5.遍历查询每一条记录</span></span><br><span class="line">            <span class="hljs-keyword">while</span> (rs.next()) &#123;</span><br><span class="line">                <span class="hljs-keyword">int</span> id = rs.getInt(<span class="hljs-string">"id"</span>);</span><br><span class="line">                String name = rs.getString(<span class="hljs-string">"name"</span>);</span><br><span class="line">                <span class="hljs-keyword">int</span> age = rs.getInt(<span class="hljs-string">"age"</span>);</span><br><span class="line"></span><br><span class="line">                System.out.println(<span class="hljs-string">"id="</span> + id + <span class="hljs-string">", name="</span> + name + <span class="hljs-string">", age="</span> + age);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="hljs-keyword">finally</span> &#123;</span><br><span class="line">            <span class="hljs-comment">//JDBCUtil为手写的JDBC工具类，release为释放资源的方法</span></span><br><span class="line">            JDBCUtil.release(conn, st, rs);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="JDBC-工具类构建"><a href="#JDBC-工具类构建" class="headerlink" title="JDBC  工具类构建"></a>JDBC  工具类构建</h2><ol>
-<li><p>资源释放工作的整合</p>
-</li>
-<li><p>驱动防二次注册</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//DriverManager.registerDriver(new Driver());</span></span><br><span class="line"><span class="hljs-comment">//Driver 这个类里面有静态代码快，只要类加载了就执行，所以等同于注册了两次驱动，其实没这个必要的。</span></span><br><span class="line"><span class="hljs-comment">//静态代码块 ---&gt; 类加载了，就执行 DriverManager.registerDriver(new Driver());</span></span><br><span class="line"><span class="hljs-comment">//最后形成以下代码即可</span></span><br><span class="line">Class.forName(<span class="hljs-string">"com.mysql.cj.jdbc.Driver"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用properties配置文件</p>
-<ol>
-<li><p>在src底下声明一个资源文件 xxx.properties ，里面的内容如下：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">driverClass=com.mysql.cj.jdbc.Driver</span><br><span class="line">url=jdbc:mysql://localhost/student?serverTimezone=GMT</span><br><span class="line">userName=root</span><br><span class="line">userPassword=root</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在工具类里面，使用静态代码块读取属性</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">static</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            <span class="hljs-comment">//创建一个属性配置对象</span></span><br><span class="line">            Properties properties = <span class="hljs-keyword">new</span> Properties();</span><br><span class="line"></span><br><span class="line">            <span class="hljs-comment">//使用类加载器，去读取src低下的资源文件</span></span><br><span class="line">            InputStream is = JDBCUtil.class.getClassLoader().getResourceAsStream(<span class="hljs-string">"jdbc.properties"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="hljs-comment">//导入输入流</span></span><br><span class="line">            properties.load(is);</span><br><span class="line"></span><br><span class="line">            <span class="hljs-comment">//读取属性</span></span><br><span class="line">            driverClass = properties.getProperty(<span class="hljs-string">"driverClass"</span>);</span><br><span class="line">            url = properties.getProperty(<span class="hljs-string">"url"</span>);</span><br><span class="line">            userName = properties.getProperty(<span class="hljs-string">"userName"</span>);</span><br><span class="line">            userPassword = properties.getProperty(<span class="hljs-string">"userPassword"</span>);</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="数据库的CRUD-sql"><a href="#数据库的CRUD-sql" class="headerlink" title="数据库的CRUD  sql"></a>数据库的CRUD  sql</h2><ul>
-<li><p>insert</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> student (<span class="hljs-keyword">NAME</span>, age) <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'wangqiang'</span>, <span class="hljs-number">28</span>)</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> student <span class="hljs-keyword">VALUES</span> (<span class="hljs-literal">NULL</span>, <span class="hljs-string">'lidazui'</span>, <span class="hljs-number">33</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>delete</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> student <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">id</span> = <span class="hljs-number">5</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>query</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> student</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>update</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">UPDATE</span> student <span class="hljs-keyword">SET</span> age = <span class="hljs-number">38</span> <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">id</span> = <span class="hljs-number">1</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="使用单元测试，测试代码"><a href="#使用单元测试，测试代码" class="headerlink" title="使用单元测试，测试代码"></a>使用单元测试，测试代码</h2><ol>
-<li><p>定义一个类，TestXXX，里面定义方法 testXXX</p>
-</li>
-<li><p>添加Junit的支持</p>
-</li>
-<li><p>在方法的上面加上注解，其实就是一个标记</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testQuery</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">  	&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>执行单元测试</p>
-</li>
-</ol>
-<h2 id="DAO模式"><a href="#DAO模式" class="headerlink" title="DAO模式"></a>DAO模式</h2><blockquote>
-<p>Data Access Object 数据访问对象</p>
-</blockquote>
-<ol>
-<li><p>新建一个Dao的接口，里面声明数据库访问规则</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">UserDao</span> </span>&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@Description</span> 查询所有</span></span><br><span class="line"><span class="hljs-comment">     **/</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">findAll</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="2">
-<li><p>新建一个Dao的实现类，具体实现早前定义的规则</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserDaoImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">UserDao</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">findAll</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        Connection conn = <span class="hljs-keyword">null</span>;</span><br><span class="line">        Statement st= <span class="hljs-keyword">null</span>;</span><br><span class="line">        ResultSet rs = <span class="hljs-keyword">null</span>;</span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            conn = JDBCUtil.getConnection();</span><br><span class="line">            st = conn.createStatement();</span><br><span class="line">            String sql = <span class="hljs-string">"select * from user"</span>;</span><br><span class="line">            rs = st.executeQuery(sql);</span><br><span class="line">            <span class="hljs-keyword">while</span> (rs.next()) &#123;</span><br><span class="line">                String userName = rs.getString(<span class="hljs-string">"username"</span>);</span><br><span class="line">                String password = rs.getString(<span class="hljs-string">"password"</span>);</span><br><span class="line">                System.out.println(<span class="hljs-string">"userName:"</span> + userName + <span class="hljs-string">", password="</span> + password);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="hljs-keyword">finally</span> &#123;</span><br><span class="line">            JDBCUtil.release(conn, st, rs);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="3">
-<li><p>直接使用实现</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">tsetFindAll</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        UserDao dao = <span class="hljs-keyword">new</span> UserDaoImpl();</span><br><span class="line">        dao.findAll();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="Statement安全问题"><a href="#Statement安全问题" class="headerlink" title="Statement安全问题"></a>Statement安全问题</h2><ol>
-<li><p>Statement执行，其实是拼接sql语句的，先拼接sql语句，然后再一起执行</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="hljs-string">"select * from user where username = '"</span> + userName + <span class="hljs-string">"' and password = '"</span> + password + <span class="hljs-string">"'"</span>;</span><br><span class="line"></span><br><span class="line">UserDao dao = <span class="hljs-keyword">new</span> UserDaoImpl();</span><br><span class="line">dao.login(<span class="hljs-string">"admin"</span>, <span class="hljs-string">"10000086' or '1=1"</span>);</span><br><span class="line"></span><br><span class="line">SELECT * FROM user WHERE username=<span class="hljs-string">'admin'</span> AND password=<span class="hljs-string">'10000086'</span> or <span class="hljs-string">'1=1'</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//前面先拼接sql语句，如果变量里面带有了数据库的关键字，那么一并认为是关键字，不认为是普通的字符串</span></span><br><span class="line">rs = st.executeQuery(sql);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="PrepareStatement"><a href="#PrepareStatement" class="headerlink" title="PrepareStatement"></a>PrepareStatement</h2><blockquote>
-<p>该对象就是替换前面的statement对象</p>
-</blockquote>
-<ol>
-<li><p>相比较以前的statement，PrepareStatement预先处理给定的sql语句，对其执行语法检查。在sql语句里面使用 ？占位符来替代后续要传递进来的变量。后面进来的变量值，将会被看成是字符串，不会产生任何的关键字。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="hljs-string">"insert into user values (null, ?, ?)"</span>;</span><br><span class="line">ps = conn.prepareStatement(sql);</span><br><span class="line">            </span><br><span class="line"><span class="hljs-comment">//给占位符赋值，从左到右数过来，1代表第一个问号，永远从1开始。</span></span><br><span class="line">ps.setString(<span class="hljs-number">1</span>, userName);</span><br><span class="line">ps.setString(<span class="hljs-number">2</span>, password);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><ol>
-<li><p>JDBC入门</p>
-</li>
-<li><p>抽取工具类</p>
-</li>
-<li><p>Statement CRUD</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">演练CRUD</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DAO模式</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">声明与实现分开</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>PrepareStatement CRUD</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">预处理sql语句，解决上面Statement出现的问题</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//1.注册驱动</span></span><br><span class="line">            DriverManager.registerDriver(<span class="hljs-keyword">new</span> Driver());</span><br></pre></td></tr></table></figure></li></ol>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/25/JDBC/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -462,7 +362,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        0
+                        1
                     </p>
                 </div>
             </div>
@@ -534,7 +434,15 @@
                 分类
             </h3>
             <ul class="menu-list">
-            
+            <li>
+        <a class="level is-marginless" href="/categories/笔记/">
+            <span class="level-start">
+                <span class="level-item">笔记</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
             </ul>
         </div>
     </div>
@@ -574,7 +482,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T03:42:31.000Z">2019-04-25</time></div>
                     <a href="/2019/04/25/JDBC/" class="has-link-black-ter is-size-6">JDBC</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
                     </p>
                 </div>
             </div>
@@ -697,7 +605,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T03:42:31.000Z">2019-04-25</time></div>
                     <a href="/2019/04/25/JDBC/" class="has-link-black-ter is-size-6">JDBC</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
                     </p>
                 </div>
             </div>

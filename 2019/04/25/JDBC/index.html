@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="JDBC Java Database Connectivity：Java 数据库连接   为什么会出现JDBC   Sun公司提供的一种数据库访问规则、规范，由于数据库种类较多，并且Java语言使用比较广泛，Sun公司就提供了一种规范，让其他的数据库提供商去实现底层的访问规则。Java程序只要使用Sun公司提供的JDBC驱动即可。  使用JDBC的基本步骤 注册驱动 12//1.注册驱动">
+    <meta name="description" content="Java Database Connectivity：Java 数据库连接   为什么会出现JDBC   Sun公司提供的一种数据库访问规则、规范，由于数据库种类较多，并且Java语言使用比较广泛，Sun公司就提供了一种规范，让其他的数据库提供商去实现底层的访问规则。Java程序只要使用Sun公司提供的JDBC驱动即可。  使用JDBC的基本步骤 注册驱动 12//1.注册驱动">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDBC">
 <meta property="og:url" content="https://wangjh626.github.io/2019/04/25/JDBC/index.html">
 <meta property="og:site_name" content="wangjh626’s Blog">
-<meta property="og:description" content="JDBC Java Database Connectivity：Java 数据库连接   为什么会出现JDBC   Sun公司提供的一种数据库访问规则、规范，由于数据库种类较多，并且Java语言使用比较广泛，Sun公司就提供了一种规范，让其他的数据库提供商去实现底层的访问规则。Java程序只要使用Sun公司提供的JDBC驱动即可。  使用JDBC的基本步骤 注册驱动 12//1.注册驱动">
+<meta property="og:description" content="Java Database Connectivity：Java 数据库连接   为什么会出现JDBC   Sun公司提供的一种数据库访问规则、规范，由于数据库种类较多，并且Java语言使用比较广泛，Sun公司就提供了一种规范，让其他的数据库提供商去实现底层的访问规则。Java程序只要使用Sun公司提供的JDBC驱动即可。  使用JDBC的基本步骤 注册驱动 12//1.注册驱动">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wangjh626.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-04-25T03:47:46.457Z">
+<meta property="og:updated_time" content="2019-04-25T03:51:19.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDBC">
-<meta name="twitter:description" content="JDBC Java Database Connectivity：Java 数据库连接   为什么会出现JDBC   Sun公司提供的一种数据库访问规则、规范，由于数据库种类较多，并且Java语言使用比较广泛，Sun公司就提供了一种规范，让其他的数据库提供商去实现底层的访问规则。Java程序只要使用Sun公司提供的JDBC驱动即可。  使用JDBC的基本步骤 注册驱动 12//1.注册驱动">
+<meta name="twitter:description" content="Java Database Connectivity：Java 数据库连接   为什么会出现JDBC   Sun公司提供的一种数据库访问规则、规范，由于数据库种类较多，并且Java语言使用比较广泛，Sun公司就提供了一种规范，让其他的数据库提供商去实现底层的访问规则。Java程序只要使用Sun公司提供的JDBC驱动即可。  使用JDBC的基本步骤 注册驱动 12//1.注册驱动">
 <meta name="twitter:image" content="https://wangjh626.github.io/images/og_image.png">
 
 
@@ -147,6 +147,10 @@
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-04-25T03:42:31.000Z">2019-04-25</time>
                 
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
+                </div>
+                
                 
                 <span class="level-item has-text-grey">
                     
@@ -164,7 +168,7 @@
             
         </h1>
         <div class="content">
-            <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><blockquote>
+            <blockquote>
 <p>Java Database Connectivity：Java 数据库连接</p>
 </blockquote>
 <ul>
@@ -176,6 +180,7 @@
 <h2 id="使用JDBC的基本步骤"><a href="#使用JDBC的基本步骤" class="headerlink" title="使用JDBC的基本步骤"></a>使用JDBC的基本步骤</h2><ol>
 <li><p>注册驱动</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//1.注册驱动</span></span><br><span class="line">            DriverManager.registerDriver(<span class="hljs-keyword">new</span> Driver());</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 </li>
 <li><p>建立连接</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//2.建立连接</span></span><br><span class="line">            conn = DriverManager.getConnection(<span class="hljs-string">"jdbc:mysql://localhost/student?serverTimezone=GMT"</span>, <span class="hljs-string">"root"</span>, <span class="hljs-string">"root"</span>);</span><br></pre></td></tr></table></figure>
@@ -400,7 +405,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        0
+                        1
                     </p>
                 </div>
             </div>
@@ -472,7 +477,15 @@
                 分类
             </h3>
             <ul class="menu-list">
-            
+            <li>
+        <a class="level is-marginless" href="/categories/笔记/">
+            <span class="level-start">
+                <span class="level-item">笔记</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
             </ul>
         </div>
     </div>
@@ -512,7 +525,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T03:42:31.000Z">2019-04-25</time></div>
                     <a href="/2019/04/25/JDBC/" class="has-link-black-ter is-size-6">JDBC</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
                     </p>
                 </div>
             </div>
@@ -635,7 +648,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T03:42:31.000Z">2019-04-25</time></div>
                     <a href="/2019/04/25/JDBC/" class="has-link-black-ter is-size-6">JDBC</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
                     </p>
                 </div>
             </div>
