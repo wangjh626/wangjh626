@@ -2,19 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>wangjh626’s Blog</title>
+<title>继承——Object：所有类的超类 - wangjh626’s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="wangjh626’s Blog">
-<meta property="og:url" content="https://wangjh626.github.io/index.html">
+    <meta name="description" content="​        Object类是Java中所有类的始祖，在Java中每个类都是由它扩展而来的。 ​        在Java中，只有基本类型（primitive type）不是对象，例如，数值、字符和布尔类型的值都不是对象。 ​        所有的数组类型，不管是对象数组还是基本类型的数组都扩展了Object类。 2.1    equals方法​        Object类中的equals方">
+<meta name="keywords" content="Java,Java核心技术卷一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="继承——Object：所有类的超类">
+<meta property="og:url" content="https://wangjh626.github.io/2019/05/08/继承——Object：所有类的超类/index.html">
 <meta property="og:site_name" content="wangjh626’s Blog">
+<meta property="og:description" content="​        Object类是Java中所有类的始祖，在Java中每个类都是由它扩展而来的。 ​        在Java中，只有基本类型（primitive type）不是对象，例如，数值、字符和布尔类型的值都不是对象。 ​        所有的数组类型，不管是对象数组还是基本类型的数组都扩展了Object类。 2.1    equals方法​        Object类中的equals方">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wangjh626.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-05-08T04:55:32.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wangjh626’s Blog">
+<meta name="twitter:title" content="继承——Object：所有类的超类">
+<meta name="twitter:description" content="​        Object类是Java中所有类的始祖，在Java中每个类都是由它扩展而来的。 ​        在Java中，只有基本类型（primitive type）不是对象，例如，数值、字符和布尔类型的值都不是对象。 ​        所有的数组类型，不管是对象数组还是基本类型的数组都扩展了Object类。 2.1    equals方法​        Object类中的equals方">
 <meta name="twitter:image" content="https://wangjh626.github.io/images/og_image.png">
 
 
@@ -89,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="wangjh626’s Blog" height="28">
+                <img src="/images/logo.svg" alt="继承——Object：所有类的超类" height="28">
             
             </a>
         </div>
@@ -97,7 +102,7 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item is-active" href="/">Home</a>
+                <a class="navbar-item" href="/">Home</a>
                 
                 <a class="navbar-item" href="/archives">Archives</a>
                 
@@ -134,8 +139,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-    <div class="card">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     
     <div class="card-content article ">
         
@@ -156,7 +160,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/08/继承——Object：所有类的超类/">继承——Object：所有类的超类</a>
+                继承——Object：所有类的超类
             
         </h1>
         <div class="content">
@@ -170,192 +174,60 @@
 <li>自反性：对于任何非空引用x，x.equals(x)应该返回true</li>
 <li>对称性：对于任何引用x和y，当且仅当y.equals(x)返回true，x.equals(y)也应该返回true</li>
 </ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/08/继承——Object：所有类的超类/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-07T09:20:30.000Z">2019-05-07</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    20 分钟 读完 (大约 2942 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/07/继承——类、超类和子类/">继承——类、超类和子类</a>
-            
-        </h1>
-        <div class="content">
-            <h3 id="1-1-定义子类"><a href="#1-1-定义子类" class="headerlink" title="1.1    定义子类"></a>1.1    定义子类</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Manager</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Employee</span></span></span><br><span class="line"><span class="hljs-class"></span>&#123;</span><br><span class="line">true添加方法和域</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​        关键字extends表明正在构造的新类派生于一个已存在的类。已存在的类称为超类（superclass）、基类（base class）或父类（parent class）；新类称为子类（subclass）、派生类（derived class）或孩子类（child class）。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/07/继承——类、超类和子类/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-25T03:42:31.000Z">2019-04-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 分钟 读完 (大约 1225 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/25/JDBC/">JDBC</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p>Java Database Connectivity：Java 数据库连接</p>
-</blockquote>
+<a id="more"></a>
 <ul>
-<li>为什么会出现JDBC</li>
+<li>传递性：对于任何引用x、y和z，如果x.equals(y)返回true，y.equals(z)返回true，x.equals(z)也应该返回true</li>
+<li>一致性：如果x和y引用的对象没有发生变化，反复调用x.equals(y)应该返回同样的结果</li>
+<li>对于任意非空引用x，x.equals(null)应该返回false</li>
 </ul>
-<blockquote>
-<p>Sun公司提供的一种数据库访问规则、规范，由于数据库种类较多，并且Java语言使用比较广泛，Sun公司就提供了一种规范，让其他的数据库提供商去实现底层的访问规则。Java程序只要使用Sun公司提供的JDBC驱动即可。</p>
-</blockquote>
-<h2 id="使用JDBC的基本步骤"><a href="#使用JDBC的基本步骤" class="headerlink" title="使用JDBC的基本步骤"></a>使用JDBC的基本步骤</h2><ol>
-<li><p>注册驱动</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//1.注册驱动</span></span><br><span class="line">            DriverManager.registerDriver(<span class="hljs-keyword">new</span> Driver());</span><br></pre></td></tr></table></figure></li></ol>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/25/JDBC/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-24T08:49:08.000Z">2019-04-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    13 分钟 读完 (大约 1930 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/24/Http协议-Servlet/">Http协议 &amp; Servlet</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Http协议"><a href="#Http协议" class="headerlink" title="Http协议"></a>Http协议</h2><ul>
-<li><p>什么是协议</p>
-<blockquote>
-<p>双方在交互、通讯的时候，遵守的一种规范、规则。</p>
-</blockquote>
+<p>这些规则的定制，避免了类库实现者在数据结构中定位一个元素时还要考虑调用x.equals(y)，还是调用y.equals(x)的问题。</p>
+<p>​        下面给出编写一个完美的equals方法的建议：</p>
+<ol>
+<li><p>显式参数命名为otherObject，稍后需要将它转换成另一个叫做other的变量。</p>
 </li>
-<li><p>Http协议</p>
-<blockquote>
-<p>针对网络上的客户端与服务器端在执行http请求的时候，遵守的一种规范。其实就是规定了客户端在访问服务器端的时候，要带上哪些东西，服务器端返回数据的时候，也要带上什么东西。</p>
-</blockquote>
+<li><p>检测this与otherObject是否引用同一个对象：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span> == otherObject) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br></pre></td></tr></table></figure>
+<p>这条语句只是一个优化。实际上，这是一种经常采用的形式。因为计算这个等式要比一个一个地比较类中的域所付出的代价小得多。</p>
 </li>
-<li><p>版本</p>
-<p>1.0</p></li></ul>
+<li><p>检测otherObject是否为null，如果为null，返回false。这项检测是很必要的。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> (otherObject == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>比较this与otherObject是否属于同一个类。如果equals的语义在每个子类中有所改变，就使用getClass检测：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> (getClass() != otherObject.getClass()) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br></pre></td></tr></table></figure>
+<p>如果所有的子类都拥有统一的语义，就使用instanceof检测：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> (!(otherObject <span class="hljs-keyword">instanceof</span> ClassName)) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将otherObject转换为响应的类类型变量：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ClassName other = (ClassName) otherObject;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>现在开始对所有需要比较的域进行比较了。使用 == 比较基本类型域，使用equals比较对象域。如果所有的域都匹配，就返回true；否则返回false。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">return</span> field1 == other.field1</span><br><span class="line">true&amp;&amp; Objects.equals(field2, other.field2)</span><br><span class="line">true&amp;&amp; . . .;</span><br></pre></td></tr></table></figure>
+<p>如果在子类中重新定义equals，就要在其中包含调用super.equals(other)。</p>
+</li>
+</ol>
+<h2 id="2-3-hashCode方法"><a href="#2-3-hashCode方法" class="headerlink" title="2.3    hashCode方法"></a>2.3    hashCode方法</h2><p>​        散列码（hash code）是由对象导出的一个整型值。散列码是没有规律的。如果x和y是两个不同的对象，x.hashCode()与y.hashCode()基本上不会相同。</p>
+<p>​        由于hashCode方法定义在Object类中，因此每个对象都有一个默认的散列码，其值为对象的存储地址。</p>
+<p>​        Equals与hashCode的定义必须一致：如果x.equals(y)返回true，那么x.hashCode()就必须与y.hashCode()具有相同的值。</p>
+<h2 id="2-4-toString方法"><a href="#2-4-toString方法" class="headerlink" title="2.4    toString方法"></a>2.4    toString方法</h2><p>​        在Object中海油一个重要的方法，就是toString方法，它用于返回表示对象值的字符串。</p>
+<p>​        如果x是任意一个对象，并调用</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(x);</span><br></pre></td></tr></table></figure>
+<p>println方法就会直接地调用x.toString()，并打印输出得到的字符串。<br>        Object类定义了toString方法，用来打印输出对象所属的类名和散列码。例如，调用</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(System.out)</span><br></pre></td></tr></table></figure>
+<p>将输出下列内容：</p>
+<p>​        java.io.PrintStream@2f6684</p>
+<p>之所以得到这样的结果是因为PrintStream类的设计者没有覆盖toString方法。</p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/24/Http协议-Servlet/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/">Java</a>, <a class="has-link-grey -link" href="/tags/Java核心技术卷一/">Java核心技术卷一</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -365,64 +237,45 @@
 
 
 
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-24T04:43:41.000Z">2019-04-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 分钟 读完 (大约 1323 个字)
-                </span>
-                
-                
-            </div>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/07/继承——类、超类和子类/">
+                <span class="level-item">继承——类、超类和子类</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/24/深入理解Java多线程与并发编程/">深入理解Java多线程与并发编程</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="一、线程三大特性"><a href="#一、线程三大特性" class="headerlink" title="一、线程三大特性"></a>一、线程三大特性</h2><p>​    多线程有三大特性：原子性、可见性、有序性</p>
-<h3 id="1-1、什么是原子性"><a href="#1-1、什么是原子性" class="headerlink" title="1.1、什么是原子性"></a>1.1、什么是原子性</h3><p>​    即一个操作或者多个操作，要么全部执行并且执行的过程不会被任何因素打断，要么就都不执行。原子性其实就是保证数据一致，线程安全的一部分。</p>
-<h3 id="1-2、什么是可见性"><a href="#1-2、什么是可见性" class="headerlink" title="1.2、什么是可见性"></a>1.2、什么是可见性</h3><p>​    当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。</p>
-<h3 id="1-3、什么是有序性"><a href="#1-3、什么是有序性" class="headerlink" title="1.3、什么是有序性"></a>1.3、什么是有序性</h3><p>​    程序执行的顺序按照代码的先后顺序执行。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/24/深入理解Java多线程与并发编程/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
         
     </div>
 </div>
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="lv-container" data-id="city" data-uid="MTAyMC80Mzg5Ny8yMDQzMg">
+    <script type="text/javascript">
+        (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
 
+            if (typeof LivereTower === 'function') { return; }
 
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
 
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+    </script>
+    <noscript> Please activate JavaScript for write a comment in LiveRe</noscript>
+</div>
 
-
+    </div>
+</div>
 </div>
                 
 
@@ -885,7 +738,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="wangjh626’s Blog" height="28">
+                    <img src="/images/logo.svg" alt="继承——Object：所有类的超类" height="28">
                 
                 </a>
                 <p class="is-size-7">
